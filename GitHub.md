@@ -1,5 +1,18 @@
 # GitHub
 
+## GitHub520
+
+```shell
+export ConfigFile="/etc/hosts"
+if [ ! -f "${ConfigFile}.raw" ]; then
+  sudo cp "${ConfigFile}" "${ConfigFile}.raw";
+else
+  sudo cp "${ConfigFile}.raw" "${ConfigFile}"
+fi
+curl -sS https://raw.hellogithub.com/hosts| sudo tee -a  /etc/hosts
+sudo resolvectl flush-caches
+```
+
 ## 代理
 
 + [设置代理解决github被墙](https://zhuanlan.zhihu.com/p/481574024)
@@ -17,7 +30,7 @@ git config --global https.proxy "socks5://127.0.0.1:1080"
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 # 可选项
-npm config delete proxy
+# npm config delete proxy
 ```
 
 ## URL替换
@@ -34,3 +47,4 @@ git config --global url."https://github.com.cnpmjs.org/".insteadOf "https://gith
 ## [GitHub Docs](https://docs.github.com/cn)
 
 - [生成新 SSH 密钥并添加到 ssh-agent](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
+
