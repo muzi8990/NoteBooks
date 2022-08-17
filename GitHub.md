@@ -36,12 +36,16 @@ git config --global --unset https.proxy
 ## URL替换
 
 + [利用github.com.cnpmjs.org快速下载GitHub仓库](https://note.qidong.name/2020/12/github-proxy/)
++ [GitHub Proxy 代理加速](https://ghproxy.com/)
 
 ```shell
-git config --global url."https://github.com.cnpmjs.org/".insteadOf "https://github.com/"
+# git config --global url."https://github.com.cnpmjs.org/".insteadOf "https://github.com/"
 # git config --global --remove-section url."https://github.com.cnpmjs.org/"
 # or
 # git config --global -e
+
+git config --global url."https://ghproxy.com/https://github.com/".insteadOf "https://github.com/"
+# git config --global --remove-section url."https://ghproxy.com/https://github.com/"
 ```
 
 ## [GitHub Docs](https://docs.github.com/cn)
